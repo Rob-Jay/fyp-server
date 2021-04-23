@@ -15,13 +15,13 @@ app.post('/test', (req, res) => {
 
 app.post('/action', (req, res) => {
     console.log('Launching python');
-    fs.writeFileSync('./Summarizer/Scan.txt', req.body.summarised_text, function(err) {
+    fs.writeFileSync('/Scan.txt', req.body.summarised_text, function(err) {
         if (err) throw err;
         console.log('Saved!');
     });
 
 
-    const command = `python ./Summarizer/main.py ${req.body.num_sentences}`;
+    const command = `/main.py ${req.body.num_sentences}`;
     exec(command, (err, stdout, stderr) => {
         if (err) {
             console.error(`exec error: ${err}`);
