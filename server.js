@@ -7,7 +7,7 @@ const fs = require('fs')
 
 app.use(express.json());
 
-app.post('/test', (req, res) => {
+app.get('/test', (req, res) => {
     res.json({ message: 'great success' })
         //res.send(JSON.stringify("Great Success"))
 })
